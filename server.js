@@ -28,10 +28,10 @@ function filterByQuery(query, notesArray) {
     return filteredResults;
 }
 
-// function findById(id, notesArray) {
-//     const result = notesArray.filter(noteData => noteData.id === id)[0];
-//     return result;
-// }
+function findById(id, notesArray) {
+    const result = notesArray.filter(noteData => noteData.id === id)[0];
+    return result;
+}
 
 // // function createNewNote(body, notesArray) {
 // //     const datacreate = body;
@@ -68,14 +68,14 @@ app.get('/api/notes', (req, res) => {
     res.json(results);
 });
 
-// app.get('/api/notes/:id', (req, res) => {
-//     const result = findById(req.params.id, noteData);
-//     if (result) {
-//       res.json(result);
-//     } else {
-//       res.send(404);
-//     }
-// });
+app.get('/api/notes/:id', (req, res) => {
+    const result = findById(req.params.id, noteData);
+    if (result) {
+      res.json(result);
+    } else {
+      res.send(404);
+    }
+});
 
 // // route post
 // // app.post('/api/notes', (req, res) => {
