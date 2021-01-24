@@ -4,8 +4,8 @@ const { noteData } = require('./db/db.json');
 // // const fs = require('fs');
 // // const path = require('path');
 
-// // tells Heroku where to go
-// const PORT = process.env.PORT || 3001;
+// tells Heroku where to go
+const PORT = process.env.PORT || 3001;
 
 // instantiate the server
 const app = express();
@@ -88,11 +88,11 @@ app.get('/api/notes', (req, res) => {
 // //     res.json(newData);
 // // });
 
-// // get server to listen
-// app.listen(PORT, () => {
-//     console.log(`API server now on port ${PORT}!`);
-// });
-
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
+// get server to listen
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
+
+// app.listen(3001, () => {
+//     console.log(`API server now on port 3001!`);
+// });
