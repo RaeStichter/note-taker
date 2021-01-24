@@ -1,28 +1,8 @@
 {
-  "data": [
+  "noteData": [
     {
       "title": "Test Title",
       "text": "Test Text"
-    },
-    {
-      "title": "THIS IS THE TITLE",
-      "text": "THIS IS INFOMRAITON",
-      "id": "1"
-    },
-    {
-      "title": "THIS IS THE TITLE",
-      "text": "THIS IS INFOMRAITON",
-      "id": "2"
-    },
-    {
-      "title": "THIS IS THE TITLE",
-      "text": "THIS IS INFOMRAITON",
-      "id": "3"
-    },
-    {
-      "title": "THIS IS THE TITLE",
-      "text": "THIS IS INFOMRAITON",
-      "id": "4"
     }
   ]
 }
