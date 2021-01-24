@@ -2,6 +2,9 @@ const express = require('express');
 // Route that the front end can request data from.
 const { noteData } = require('./db/db.json');
 
+// tells Heroku where to go
+const PORT = process.env.PORT || 3001;
+
 // instantiate the server
 const app = express();
 
@@ -12,6 +15,7 @@ app.get('/api/notes', (req, res) => {
     res.json(noteData);
 });
 
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
+// get server to listen
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
