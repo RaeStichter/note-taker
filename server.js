@@ -15,6 +15,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
+// make certain files available without server endpoint
+app.use(express.static('public'));
 
 // --------------------------- FUNCTIONS ---------------------------
 function filterByQuery(query, notesArray) {
@@ -96,9 +98,12 @@ app.post('/api/notes', (req, res) => {
 
         res.json(newData);
     }
-
-    
 });
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
 
 // get server to listen
 app.listen(PORT, () => {
