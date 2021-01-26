@@ -33,17 +33,20 @@ function findById(id, notesArray) {
     return result;
 }
 
-// // function createNewNote(body, notesArray) {
-// //     const datacreate = body;
-// //     notesArray.push(datacreate);
-// //     // fs.writeFileSync(
-// //     //     path.join(__dirname, './db/db.json'),
-// //     //     JSON.stringify({ datacreate: notesArray }, null, 2)
-// //     // );
+function createNewNote(body, notesArray) {
+    console.log(body);
+    return body;
+    
+    //const datacreate = body;
+    //notesArray.push(datacreate);
+    // fs.writeFileSync(
+    //     path.join(__dirname, './db/db.json'),
+    //     JSON.stringify({ datacreate: notesArray }, null, 2)
+    // );
 
-// //     // return finished code to post route for response
-// //     return datacreate;
-// // }
+    // return finished code to post route for response
+    //return datacreate;
+}
 
 // // function validateNoteData(data) {
 // //     if (!data.title || typeof data.title !== 'string') {
@@ -80,15 +83,15 @@ app.get('/api/notes/:id', (req, res) => {
 // route post
 app.post('/api/notes', (req, res) => {
     // req.body is where our incoming content will be
-    console.log(req.body);
-    res.json(req.body);
+    //console.log(req.body);
+    //res.json(req.body);
     // set id based on what the next index of the array will be
-    //req.body.id = noteData.length.toString();
+    req.body.id = noteData.length.toString();
 
     // add animal to json file and animals array in this function
     //const newData = createNewNote(req.body, noteData);
 
-    //res.json(newData);
+    res.json(req.body);
 });
 
 // get server to listen
