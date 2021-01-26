@@ -11,10 +11,10 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 // // --------------------------- MIDDLEWARE ---------------------------
-// // parse incoming string or array data
-// // app.use(express.urlencoded({ extended: true }));
-// // // parse incoming JSON data
-// // app.use(express.json());
+// parse incoming string or array data
+app.use(express.urlencoded({ extended: true }));
+// parse incoming JSON data
+app.use(express.json());
 
 // --------------------------- FUNCTIONS ---------------------------
 function filterByQuery(query, notesArray) {
@@ -77,16 +77,19 @@ app.get('/api/notes/:id', (req, res) => {
     }
 });
 
-// // route post
-// // app.post('/api/notes', (req, res) => {
-// //     // set id based on what the next index of the array will be
-// //     req.body.id = noteData.length.toString();
+// route post
+app.post('/api/notes', (req, res) => {
+    // req.body is where our incoming content will be
+    console.log(req.body);
+    res.json(req.body);
+    // set id based on what the next index of the array will be
+    //req.body.id = noteData.length.toString();
 
-// //     // add animal to json file and animals array in this function
-// //     const newData = createNewNote(req.body, noteData);
+    // add animal to json file and animals array in this function
+    //const newData = createNewNote(req.body, noteData);
 
-// //     res.json(newData);
-// // });
+    //res.json(newData);
+});
 
 // get server to listen
 app.listen(PORT, () => {
