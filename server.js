@@ -1,8 +1,8 @@
 const express = require('express');
 // Route that the front end can request data from.
 const { noteData } = require('./db/db.json');
-// // const fs = require('fs');
-// // const path = require('path');
+const fs = require('fs');
+const path = require('path');
 
 // tells Heroku where to go
 const PORT = process.env.PORT || 3001;
@@ -34,9 +34,19 @@ function findById(id, notesArray) {
 }
 
 function createNewNote(body, notesArray) {
-    console.log(body);
-    return body;
+    // console.log(body);
+    // return body;
     
+    const newData = body;
+    notesArray.push(newData);
+
+    fs.writeFileSync(
+        path.join(__dirname, './db/db.json'),
+        JSON.stringify({ noteData: notesArray }, null, 2)
+    );
+    
+    
+    return newData;
     //const datacreate = body;
     //notesArray.push(datacreate);
     // fs.writeFileSync(
@@ -85,13 +95,14 @@ app.post('/api/notes', (req, res) => {
     // req.body is where our incoming content will be
     //console.log(req.body);
     //res.json(req.body);
+
     // set id based on what the next index of the array will be
     req.body.id = noteData.length.toString();
 
-    // add animal to json file and animals array in this function
-    //const newData = createNewNote(req.body, noteData);
+    // add note to json file and notes array in this function
+    const newData = createNewNote(req.body, noteData);
 
-    res.json(req.body);
+    res.json(newData);
 });
 
 // get server to listen
