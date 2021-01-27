@@ -1,22 +1,23 @@
 {
   "noteData": [
     {
-      "title": "Test Title",
-      "text": "Test Text"
-    },
-    {
       "title": "This is a test",
       "text": "This is text about the test",
       "id": "1"
     },
     {
-      "title": "ghjdgh",
-      "text": "dghjdghjd",
+      "title": "Grocery List",
+      "text": "Milk, eggs, oranges",
+      "id": "1"
+    },
+    {
+      "title": "To do for this week:",
+      "text": "Laundry, Dr appt",
       "id": "2"
     },
     {
-      "title": "dghjdgh",
-      "text": "dghjdghj",
+      "title": "Tasks:",
+      "text": "Write down homework, enter working hours",
       "id": "3"
     }
   ]

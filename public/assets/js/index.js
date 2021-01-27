@@ -54,7 +54,7 @@ const saveNote = (noteObject) =>
   })
   .then(postResponse => {
     console.log(postResponse);
-    alert('Thank you for adding a note!');
+    //alert('Thank you for adding a note!');
   });
 
 const deleteNote = (id) =>
